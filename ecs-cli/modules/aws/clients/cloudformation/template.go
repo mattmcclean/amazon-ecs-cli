@@ -376,6 +376,20 @@ var template = `
           ]
         },
         "Path": "/",
+    	"Policies": [ {
+		"PolicyName": "root",
+		"PolicyDocument": {
+  			"Version" : "2012-10-17",
+  			"Statement": [ {
+     				"Effect": "Allow",
+     				"Action": [ 
+			                "ec2:DescribeInstances",
+			                "autoscaling:DescribeAutoScalingInstances"
+     				],
+     				"Resource": "*"
+  			} ]
+		}
+	} ],
         "ManagedPolicyArns": [
           "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
         ]
